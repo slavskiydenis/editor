@@ -36,6 +36,7 @@ input {
     font-size: 16px;
 }
 .tdItem:hover {
+    color: white;
     background-color: rgb(36, 167, 187);
 }
 .editorSheet {
