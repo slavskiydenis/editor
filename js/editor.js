@@ -3,10 +3,7 @@ var Mask = "tdl_";
 var N_store;
 
 document.addEventListener("keydown", function(e) {
-  localStorage.setItem(
-    N_store + "text_in_editor",
-    document.getElementById("editor").innerHTML
-  );
+  localStorage.setItem(N_store + "text_in_editor", document.getElementById("editor").innerHTML);
 });
 
 function showTasks() {
@@ -52,9 +49,7 @@ $("#tdlApp input").on("keydown", function(e) {
       .attr("data-itemid", Mask + number_Id)
       .text(str)
       .appendTo(List);
-    document.getElementById("h1_name").innerHTML = "Новый документ: " + localStorage.getItem(
-      "tdl_" + N_store
-    );
+    document.getElementById("h1_name").innerHTML = "Новый документ: " + localStorage.getItem("tdl_" + N_store);
   }
 });
 
@@ -65,17 +60,12 @@ $(document).on("click", ".tdItem", function(e) {
     localStorage.removeItem(jet.attr("data-itemid")[4] + "text_in_editor");
     document.getElementById("editor").innerHTML = "";
     document.getElementById("editor").style.display = "none";
-    document.getElementById("h1_name").innerHTML =
-      "Текстовый редактор с автосохранением";
+    document.getElementById("h1_name").innerHTML = "Текстовый редактор с автосохранением";
     jet.remove();
     return true;
   }
   N_store = jet.attr("data-itemid")[4];
   document.getElementById("editor").style.display = "block";
-  document.getElementById("editor").innerHTML = localStorage.getItem(
-    N_store + "text_in_editor"
-  );
-  document.getElementById("h1_name").innerHTML = "Документ: " + localStorage.getItem(
-    "tdl_" + N_store
-  );
+  document.getElementById("editor").innerHTML = localStorage.getItem(N_store + "text_in_editor");
+  document.getElementById("h1_name").innerHTML = "Документ: " + localStorage.getItem("tdl_" + N_store);
 });
